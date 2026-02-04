@@ -1,8 +1,8 @@
 id: canary
 title: Canary
-version: 1.3.0
+version: 1.3.1
 release-notes: |
-  Added support for 8 new languages (Norwegian, Spanish, Portuguese, German, French, Japanese, Danish, Swedish) with full UI and notification translations. Improved contact modal UX and wallet syncing display.
+  Fix: Fixed translation keys showing instead of localized content in notifications, improved BTC amount formatting with locale-aware number display, improved contact editing to preserve unchanged notification methods and added Electrum connectivity checks to prevent wallet creation when the server is unavailable.
   * Bitcoin wallet monitoring with transaction notifications
   * Support for multipath descriptors (P2WPKH, P2SH, P2TR, P2PKH)
   * Dedicated wallet wizard for easy onboarding
