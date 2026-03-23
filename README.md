@@ -190,10 +190,9 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for build instructions and development wo
 
 ```yaml
 package_id: canary
-upstream_version: v1.4.0
 images:
-  backend: schjonhaug/canary-backend:v1.4.0
-  frontend: schjonhaug/canary-frontend:v1.4.0
+  backend: schjonhaug/canary-backend
+  frontend: schjonhaug/canary-frontend
 volumes:
   main: /app/data
 ports:
