@@ -10,7 +10,7 @@ export const setDependencies = sdk.setupDependencies(async ({ effects }) => {
     return {
       fulcrum: {
         kind: 'running',
-        versionRange: '>=2.1.0:7-beta.1',
+        versionRange: '>=2.1.0:7-beta.4',
         healthChecks: ['primary', 'sync-progress'],
       },
     }
@@ -18,7 +18,7 @@ export const setDependencies = sdk.setupDependencies(async ({ effects }) => {
     return {
       electrs: {
         kind: 'running',
-        versionRange: '>=0.11.1:1-beta.1',
+        versionRange: '>=0.11.1:1-beta.4',
         healthChecks: ['electrs', 'sync'],
       },
     }
