@@ -38,7 +38,7 @@
 |----------|-------|
 | Image (backend) | `schjonhaug/canary-backend` (upstream unmodified) |
 | Image (frontend) | `schjonhaug/canary-frontend` (upstream unmodified) |
-| Architectures | Default (as provided by upstream) |
+| Architectures | x86_64, aarch64 (as provided by upstream images) |
 | Entrypoint | Default upstream entrypoints |
 
 Canary runs as two separate containers: a backend API server and a frontend web UI.
@@ -68,7 +68,7 @@ Canary runs as two separate containers: a backend API server and a frontend web 
 
 1. Install either Fulcrum or Electrs (required for blockchain lookups)
 2. Install Canary from the StartOS marketplace
-3. A task will prompt you to select your Electrum server (Fulcrum or Electrs)
+3. A **critical task** will prompt you to select your Electrum server (Fulcrum or Electrs) — the service will not start until this is resolved
 4. Access the web UI to add wallets and configure notifications
 
 ---
@@ -133,7 +133,7 @@ Choose which Electrum server to use for address lookups.
 | Fulcrum | Optional (one of) | Electrum server for blockchain lookups |
 | Electrs | Optional (one of) | Electrum server for blockchain lookups |
 
-One of Fulcrum or Electrs must be installed and running. On first start, a critical task prompts the user to select which one to use.
+One of Fulcrum or Electrs must be installed and running. If no Electrum server is selected, a critical task is created at startup blocking the service until resolved.
 
 ---
 
@@ -190,6 +190,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for build instructions and development wo
 
 ```yaml
 package_id: canary
+architectures: [x86_64, aarch64]
 images:
   backend: schjonhaug/canary-backend
   frontend: schjonhaug/canary-frontend
